@@ -5,6 +5,8 @@ Logstash pipeline for processing Ansible logs
 
 Minimalist pipeline to parse Ansible logs on managed hosts
 
+Note, that Ansible uses it's module as part of the process name. So make the condition to route into this pipeline a regex check: `[process][name] =~ "ansible"`.
+
 ## Inputs and Outputs ##
 
 If you use files called `input.conf` and `output.conf` they will not collide with this rules, even when you want to pull new versions.
